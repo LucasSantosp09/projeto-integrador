@@ -24,7 +24,17 @@ private final CategoriaService categoriaService;
 
     @GetMapping
     public List<CategoriasModel> listarCategorias() {
-        return categoriaService.listarCategorias();
+    return categoriaService.listarCategorias();
     }
+
+    @PutMapping("/{categoriaId}")
+    public CategoriasModel editarCategoria(@PathVariable Long categoriaId, @RequestBody CategoriasModel novaCategoria) {
+        return categoriaService.editarCategoria(categoriaId, novaCategoria);
+    }
+    @DeleteMapping("/{categoriaId}")
+    public void deletarCategoria(@PathVariable Long categoriaId) {
+        categoriaService.deletarCategoria(categoriaId);
+    }
+
 
 }
