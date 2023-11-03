@@ -1,0 +1,13 @@
+projetointegrador/DigitalHouse/carros/repository/CarroRepository.class
+projetointegrador/DigitalHouse/carros/model/CarroModel.class
+projetointegrador/DigitalHouse/produtos/model/ProdutosModel.class
+projetointegrador/DigitalHouse/DigitalHouseApplication.class
+projetointegrador/DigitalHouse/categorias/exception/CategoriaNaoEncontradaException.class
+projetointegrador/DigitalHouse/categorias/service/CategoriaService.class
+projetointegrador/DigitalHouse/categorias/repository/CategoriaRepository.class
+projetointegrador/DigitalHouse/carros/service/CarroService.class
+projetointegrador/DigitalHouse/categorias/model/CategoriasModel.class
+projetointegrador/DigitalHouse/carros/controller/CarroController.class
+projetointegrador/DigitalHouse/imagens/model/ImagensModel.class
+projetointegrador/DigitalHouse/categorias/controller/CategoriaController.class
+projetointegrador/DigitalHouse/caracteristicas/model/CaracteristicasModel.class
