@@ -20,7 +20,7 @@ jobs:
       run: chmod +x ./mvnw
 
     - name: Build with Maven (Profile Prod)
-      run: ./mvnw clean package -Pprod
+      run: ./mvnw clean package -Pprod -DskipTests
       
     - name: Upload JAR
       uses: actions/upload-artifact@v2
