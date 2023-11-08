@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: projetointegrador.DigitalHouse.DigitalHouseApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.44 s - in projetointegrador.DigitalHouse.DigitalHouseApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.642 s - in projetointegrador.DigitalHouse.DigitalHouseApplicationTests
