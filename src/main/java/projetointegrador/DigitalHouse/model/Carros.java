@@ -1,4 +1,4 @@
-package projetointegrador.DigitalHouse.carros.model;
+package projetointegrador.DigitalHouse.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,12 +6,9 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "carros")
-public class CarroModel {
+public class Carros {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String marca;
-    private String modelo;
-    private int ano;
 }
