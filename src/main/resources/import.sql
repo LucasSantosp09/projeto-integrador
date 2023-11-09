@@ -41,9 +41,9 @@ INSERT INTO usuario (bairro, cep, complemento, logradouro, numero, telefone) VAL
 INSERT INTO usuario (bairro, cep, complemento, logradouro, numero, telefone) VALUES ('Bairro Fortaleza', '60000-333', 'Casa 33', 'Rua FORT', '334', '85 96666-3333');
 
 -- Reservas
-INSERT INTO reserva (preco_total, carro_id, cliente_id, data_inicio, data_fim) VALUES (200.0, 2, 2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP() + INTERVAL 3 DAY);
-INSERT INTO reserva (preco_total, carro_id, cliente_id, data_inicio, data_fim) VALUES (250.0, 3, 3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP() + INTERVAL 4 DAY);
-INSERT INTO reserva (preco_total, carro_id, cliente_id, data_inicio, data_fim) VALUES (300.0, 1, 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP() + INTERVAL 5 DAY);
+INSERT INTO reserva (preco_total, carro_id, usuario_id, data_inicio, data_fim) VALUES (200.0, 2, 2, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP() + INTERVAL 3 DAY);
+INSERT INTO reserva (preco_total, carro_id, usuario_id, data_inicio, data_fim) VALUES (250.0, 3, 3, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP() + INTERVAL 4 DAY);
+INSERT INTO reserva (preco_total, carro_id, usuario_id, data_inicio, data_fim) VALUES (300.0, 1, 1, CURRENT_TIMESTAMP(), CURRENT_TIMESTAMP() + INTERVAL 5 DAY);
 
 -- Avaliações
 INSERT INTO avaliacao (pontuacao, carro_id, usuario_id, data_avaliacao, comentario) VALUES (4, 2, 2, CURRENT_TIMESTAMP(), 'Bom, mas poderia ser mais econômico.');

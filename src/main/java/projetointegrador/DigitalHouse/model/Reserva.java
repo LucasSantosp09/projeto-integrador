@@ -15,16 +15,16 @@ public class Reserva {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     @OneToOne
     @JoinColumn(name = "carro_id")
     private Carro carro;
 
-    private Date DataInicio;
+    private Date dataInicio;
 
-    private Date DataFim;
+    private Date dataFim;
 
     private Double precoTotal;
 }
