@@ -3,6 +3,8 @@ package projetointegrador.DigitalHouse.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "clientes")
@@ -31,6 +33,7 @@ public class Clientes {
     @OneToOne(mappedBy = "clientes")
     private Reservas reservas;
 
-
+    @OneToMany(mappedBy = "clientes")
+    private List<Avaliacoes> avaliacoes;
 
 }

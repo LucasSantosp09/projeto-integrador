@@ -44,4 +44,7 @@ public class Carros {
 
     @OneToOne(mappedBy = "carros")
     private Reservas reservas;
+
+    @OneToMany(mappedBy = "carros")
+    private List<Avaliacoes> avaliacoes;
 }
