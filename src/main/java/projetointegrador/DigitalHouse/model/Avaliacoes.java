@@ -12,4 +12,5 @@ public class Avaliacoes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
 }
