@@ -38,7 +38,7 @@ public class Carro {
     @JoinTable(name = "carro_caracteristica",
             joinColumns = @JoinColumn(name = "carro_id"),
             inverseJoinColumns = @JoinColumn(name = "caracteristica_id"))
-    private List<CaracteristicaCarro> caracteristicaCarros;
+    private List<CaracteristicaCarro> caracteristicaCarro;
 
     private boolean status;
 

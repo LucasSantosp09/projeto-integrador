@@ -16,6 +16,6 @@ public class CaracteristicaCarro {
 
     private String descricao;
 
-    @ManyToMany(mappedBy = "caracteristicaCarros")
+    @ManyToMany(mappedBy = "caracteristicaCarro")
     private List<Carro> carro;
 }
