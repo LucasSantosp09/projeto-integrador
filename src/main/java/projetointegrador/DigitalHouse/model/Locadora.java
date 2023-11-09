@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -35,12 +34,8 @@ public class Locadora {
             joinColumns = @JoinColumn(name = "locadora_id"),
             inverseJoinColumns = @JoinColumn(name = "cidade_id")
     )
-    private Set<Cidade> cidades = new HashSet<>();
+    private Set<Cidade> cidade = new HashSet<>();
 
     @OneToOne(mappedBy = "locadora")
-    private Carros carros;
-
-
-
-
+    private Carro carro;
 }

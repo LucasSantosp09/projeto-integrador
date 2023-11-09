@@ -7,8 +7,8 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "clientes")
-public class Clientes {
+@Table(name = "usuario")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,10 +30,10 @@ public class Clientes {
 
     private String cep;
 
-    @OneToOne(mappedBy = "clientes")
-    private Reservas reservas;
+    @OneToOne(mappedBy = "usuario")
+    private Reserva reserva;
 
-    @OneToMany(mappedBy = "clientes")
-    private List<Avaliacoes> avaliacoes;
+    @OneToMany(mappedBy = "usuario")
+    private List<Avaliacao> avaliacao;
 
 }

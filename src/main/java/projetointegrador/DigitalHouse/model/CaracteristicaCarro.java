@@ -7,8 +7,8 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "caracteristicas_carro")
-public class CaracteristicasCarro {
+@Table(name = "caracteristica_carro")
+public class CaracteristicaCarro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,6 @@ public class CaracteristicasCarro {
 
     private String descricao;
 
-    @ManyToMany(mappedBy = "caracteristicasCarros")
-    private List<Carros> carros;
+    @ManyToMany(mappedBy = "caracteristicaCarros")
+    private List<Carro> carro;
 }

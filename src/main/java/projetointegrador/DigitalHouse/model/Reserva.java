@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name = "reserva")
-public class Reservas {
+public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,18 +16,15 @@ public class Reservas {
 
     @OneToOne
     @JoinColumn(name = "cliente_id")
-    private Clientes clientes;
+    private Usuario usuario;
 
     @OneToOne
     @JoinColumn(name = "carro_id")
-    private Carros carros;
+    private Carro carro;
 
     private Date DataInicio;
 
     private Date DataFim;
 
     private Double precoTotal;
-
-
-
 }

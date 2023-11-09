@@ -7,8 +7,8 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "carros")
-public class Carros {
+@Table(name = "carro")
+public class Carro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,16 +35,16 @@ public class Carros {
     private Locadora locadora;
 
     @ManyToMany
-    @JoinTable(name = "carros_caracteristicas",
+    @JoinTable(name = "carro_caracteristica",
             joinColumns = @JoinColumn(name = "carro_id"),
             inverseJoinColumns = @JoinColumn(name = "caracteristica_id"))
-    private List<CaracteristicasCarro> caracteristicasCarros;
+    private List<CaracteristicaCarro> caracteristicaCarros;
 
     private boolean status;
 
-    @OneToOne(mappedBy = "carros")
-    private Reservas reservas;
+    @OneToOne(mappedBy = "carro")
+    private Reserva reserva;
 
-    @OneToMany(mappedBy = "carros")
-    private List<Avaliacoes> avaliacoes;
+    @OneToMany(mappedBy = "carro")
+    private List<Avaliacao> avaliacao;
 }

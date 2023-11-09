@@ -17,6 +17,6 @@ public class Cidade {
 
     private String nomeCidade;
 
-    @ManyToMany(mappedBy = "cidades")
-    private Set<Locadora> locadoras = new HashSet<>();
+    @ManyToMany(mappedBy = "cidade")
+    private Set<Locadora> locadora = new HashSet<>();
 }

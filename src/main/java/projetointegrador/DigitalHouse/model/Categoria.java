@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "categorias")
+@Table(name = "categoria")
 public class Categoria {
 
     @Id
@@ -19,6 +19,6 @@ public class Categoria {
     private String UrlImagem;
 
     @OneToMany(mappedBy = "categoria")
-    private List<Carros> carros;
+    private List<Carro> carro;
 
 }

@@ -7,18 +7,18 @@ import java.util.Date;
 
 @Entity
 @Data
-@Table(name = "avaliacoes")
-public class Avaliacoes {
+@Table(name = "avaliacao")
+public class Avaliacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    private Clientes clientes;
+    private Usuario usuario;
 
     @ManyToOne
-    private Carros carros;
+    private Carro carro;
 
     private Integer pontuacao;
 
