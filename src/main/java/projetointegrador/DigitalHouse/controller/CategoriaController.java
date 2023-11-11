@@ -35,8 +35,8 @@ public class CategoriaController {
 
     @PostMapping
     public ResponseEntity<Categoria> SalvarCategoria(@RequestBody Categoria categoria) {
-        Categoria savedCategoria = categoriaService.SalvarCategoria(categoria);
-        return ResponseEntity.ok(savedCategoria);
+        Categoria salvarCategoria = categoriaService.SalvarCategoria(categoria);
+        return ResponseEntity.ok(salvarCategoria);
     }
 
     @DeleteMapping("/{id}")
