@@ -17,20 +17,19 @@ public class CategoriaService {
         this.categoriaRepository = categoriaRepository;
     }
 
-    public List<Categoria> getAllCategorias() {
+    public List<Categoria> ListarCategorias() {
         return categoriaRepository.findAll();
     }
 
-    public Optional<Categoria> getCategoriaById(Long id) {
+    public Optional<Categoria> ListarCategoriaPorId(Long id) {
         return categoriaRepository.findById(id);
     }
 
-    public Categoria saveCategoria(Categoria categoria) {
-        // Adicione validações ou lógica de negócios, se necessário
+    public Categoria SalvarCategoria(Categoria categoria) {
         return categoriaRepository.save(categoria);
     }
 
-    public void deleteCategoria(Long id) {
+    public void DeletarCategoria(Long id) {
         categoriaRepository.deleteById(id);
     }
 }

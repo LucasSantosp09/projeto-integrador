@@ -22,26 +22,26 @@ public class CategoriaController {
     }
 
     @GetMapping
-    public List<Categoria> getAllCategorias() {
-        return categoriaService.getAllCategorias();
+    public List<Categoria> ListarCategorias() {
+        return categoriaService.ListarCategorias();
     }
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Categoria> getCategoriaById(@PathVariable Long id) {
-        Optional<Categoria> categoria = categoriaService.getCategoriaById(id);
+    public ResponseEntity<Categoria> ListarCategoriaPorId(@PathVariable Long id) {
+        Optional<Categoria> categoria = categoriaService.ListarCategoriaPorId(id);
         return categoria.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PostMapping
-    public ResponseEntity<Categoria> saveCategoria(@RequestBody Categoria categoria) {
-        Categoria savedCategoria = categoriaService.saveCategoria(categoria);
+    public ResponseEntity<Categoria> SalvarCategoria(@RequestBody Categoria categoria) {
+        Categoria savedCategoria = categoriaService.SalvarCategoria(categoria);
         return ResponseEntity.ok(savedCategoria);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCategoria(@PathVariable Long id) {
-        categoriaService.deleteCategoria(id);
+    public ResponseEntity<Void> DeletarCategoria(@PathVariable Long id) {
+        categoriaService.DeletarCategoria(id);
         return ResponseEntity.noContent().build();
     }
 
