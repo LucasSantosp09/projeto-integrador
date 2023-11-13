@@ -1,18 +1,15 @@
 package projetointegrador.DigitalHouse.service;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
-
 import java.sql.SQLDataException;
-import java.util.List;
 import java.sql.SQLException;
-import java.util.Optional;
+import java.util.List;
 
 public interface ICarro<TYPE, REQ, RES> {
-    RES createCarro(REQ carroRequestDTO) throws SQLDataException;
+    RES criarCarro(REQ carroRequestDTO) throws SQLDataException;
 
-    List<TYPE> getAllCarros() throws SQLException;
+    List<TYPE> obterCarros() throws SQLException;
 
-//    Optional<TYPE> findByIdCar(Long id);
+//    Optional<TYPE> obterCarro(Long id);
 //
 //    void DeleteCarro(Long id) throws SQLException;
 }
