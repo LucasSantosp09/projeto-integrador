@@ -14,6 +14,7 @@ public class CaracteristicaCarro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String nome;
     private String descricao;
 
     @ManyToMany(mappedBy = "caracteristicaCarro")

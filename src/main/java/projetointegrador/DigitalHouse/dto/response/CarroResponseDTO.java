@@ -24,7 +24,7 @@ public class CarroResponseDTO {
     private String cor;
     private String placa;
     private String urlImagem;
-    private String categoriaNome;
-    private String locadoraNome;
-    private List<String> caracteristicasNomes;
+    private String categoriaResponse;
+    private String locadoraResponse;
+    private List<String> caracteristicasResponse;
 }

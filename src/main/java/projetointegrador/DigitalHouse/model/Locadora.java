@@ -16,7 +16,7 @@ public class Locadora {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomeLocadora;
+    private String nome;
 
     private String logradouro;
 
@@ -36,6 +36,6 @@ public class Locadora {
     )
     private Set<Cidade> cidade = new HashSet<>();
 
-    @OneToOne(mappedBy = "locadora")
+    @OneToOne(mappedBy = "locadoraCarro")
     private Carro carro;
 }

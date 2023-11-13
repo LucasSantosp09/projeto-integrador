@@ -36,11 +36,11 @@ public class Carro {
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    private Categoria categoriaCarro;
 
     @OneToOne
     @JoinColumn(name = "locadora_id")
-    private Locadora locadora;
+    private Locadora locadoraCarro;
 
     @ManyToMany
     @JoinTable(name = "carro_caracteristica",

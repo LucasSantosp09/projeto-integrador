@@ -14,11 +14,13 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String nome;
+
     private String descricao;
 
-    private String UrlImagem;
+    private String imagem;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Carro> carro;
+    @OneToMany(mappedBy = "categoriaCarro")
+    private List<Carro> carros;
 
 }
