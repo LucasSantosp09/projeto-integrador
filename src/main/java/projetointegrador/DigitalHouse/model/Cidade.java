@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "cidade")
+@Table(name = "TB_CIDADE")
 public class Cidade {
 
     @Id

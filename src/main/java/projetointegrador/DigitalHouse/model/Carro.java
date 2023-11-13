@@ -1,13 +1,16 @@
 package projetointegrador.DigitalHouse.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.List;
 
-@Entity
 @Data
-@Table(name = "carro")
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
+@Entity(name = "carro")
+@Table(name = "TB_CARRO")
 public class Carro {
 
     @Id
@@ -19,6 +22,8 @@ public class Carro {
     private String modelo;
 
     private Integer ano;
+
+    private boolean status;
 
     private String cor;
 
@@ -40,11 +45,11 @@ public class Carro {
             inverseJoinColumns = @JoinColumn(name = "caracteristica_id"))
     private List<CaracteristicaCarro> caracteristicaCarro;
 
-    private boolean status;
 
     @OneToOne(mappedBy = "carro")
     private Reserva reserva;
 
     @OneToMany(mappedBy = "carro")
-    private List<Avaliacao> avaliacao;
+    private List<Avaliacao> avaliacoes;
+
 }
