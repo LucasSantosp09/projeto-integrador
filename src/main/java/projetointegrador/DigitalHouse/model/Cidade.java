@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,5 +18,5 @@ public class Cidade {
     private String nomeCidade;
 
     @ManyToMany(mappedBy = "cidade")
-    private Set<Locadora> locadora = new HashSet<>();
+    private List<Locadora> locadora;
 }

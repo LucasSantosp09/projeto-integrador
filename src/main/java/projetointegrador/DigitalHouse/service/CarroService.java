@@ -8,13 +8,10 @@ import projetointegrador.DigitalHouse.dto.response.CarroResponseDTO;
 import projetointegrador.DigitalHouse.exception.InvalidDataException;
 import projetointegrador.DigitalHouse.exception.ResourceNotFoundException;
 import projetointegrador.DigitalHouse.model.Carro;
-import projetointegrador.DigitalHouse.model.Categoria;
 import projetointegrador.DigitalHouse.repository.CarroRepository;
-import projetointegrador.DigitalHouse.repository.CategoriaRepository;
 
-import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 //Service (CarroService):
 // Lida com a lógica de negócios,
@@ -27,36 +24,22 @@ public class CarroService {
     @Autowired
     private ModelMapper modelMapper;
 
-    public CarroResponseDTO criarCarro(CarroRequestDTO carroRequestDTO) throws SQLException, InvalidDataException {
+    public List<Carro> getAllCarros() throws ResourceNotFoundException {
         try {
-            Carro carro = convertToEntity(carroRequestDTO);
+            return carroRepository.findAll();
+        } catch (Exception ex) {
+            throw new ResourceNotFoundException("Recursos não encontrados!");
+        }
+    }
+
+    public CarroResponseDTO criarCarro(CarroRequestDTO newRequestDTO) throws InvalidDataException {
+        try {
+            Carro carro = modelMapper.map(newRequestDTO, Carro.class);
             Carro carroSalvo = carroRepository.save(carro);
-            return convertToDTO(carroSalvo);
-        } catch (Exception e) {
-            throw new InvalidDataException("Não foi possivel executar essa ação");
+            return modelMapper.map(carroSalvo, CarroResponseDTO.class);
+        } catch (Exception ex) {
+            throw new InvalidDataException("Erro! Dados incorretos");
         }
-    }
-
-    public List<CarroResponseDTO> obterCarros() throws SQLException, ResourceNotFoundException {
-        try {
-            List<Carro> carroList = carroRepository.findAll();
-            return carroList.stream().map(this::convertToDTO).collect(Collectors.toList());
-        } catch (Exception e) {
-            throw new ResourceNotFoundException("Recurso não existe");
-        }
-    }
-
-    public CarroResponseDTO obterCarroPorId(Long id) throws ResourceNotFoundException {
-        Carro carro = carroRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada com o ID: " + id));
-        return convertToDTO(carro);
-    }
-
-    private CarroResponseDTO convertToDTO(Carro carro) {
-        return modelMapper.map(carro, CarroResponseDTO.class);
-    }
-
-    private Carro convertToEntity(CarroRequestDTO carroRequestDTO) {
-        return modelMapper.map(carroRequestDTO, Carro.class);
     }
 
 }

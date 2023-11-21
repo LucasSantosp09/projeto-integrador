@@ -1,18 +1,12 @@
 package projetointegrador.DigitalHouse.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(of = "id")
-@Entity(name = "carro")
+@Entity
 @Table(name = "TB_CARRO")
 public class Carro {
 
@@ -26,23 +20,21 @@ public class Carro {
 
     private Integer ano;
 
-    private boolean status;
+    private boolean isDisponivel;
 
-    private String cor;
-
-    private String placa;
+    private Float precoPorDia;
 
     private String urlImagem;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "categoria_id")
     private Categoria categoriaCarro;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "locadora_id")
     private Locadora locadoraCarro;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "carro_caracteristica",
             joinColumns = @JoinColumn(name = "carro_id"),
             inverseJoinColumns = @JoinColumn(name = "caracteristica_id"))

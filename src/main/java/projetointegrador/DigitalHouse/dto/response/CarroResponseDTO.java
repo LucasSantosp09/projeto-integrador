@@ -1,30 +1,23 @@
 package projetointegrador.DigitalHouse.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.*;
-import projetointegrador.DigitalHouse.model.*;
+import lombok.Data;
 
 import java.util.List;
 
-// CarroResponseDTO contém os dados que serão
-// retornados em uma operação de leitura.
-// Dados retornados ao cliente (response).
-
+//Os DTOs de response são usados para enviar dados da entidade para fora da aplicação.
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class CarroResponseDTO {
     private Long id;
     private String marca;
     private String modelo;
-    private Integer ano;
-    private boolean status;
-    private String cor;
-    private String placa;
+    private Integer carroAno;
+    private Boolean isDisponivel;
+    private Float precoPorDia;
     private String urlImagem;
-    private String categoriaResponse;
-    private String locadoraResponse;
-    private List<String> caracteristicasResponse;
+    private Long categoriaCarroId;
+    private Long locadoraCarroId;
+    private List<Long> caracteristicasCarroIds;
+    private Long reservaId;
+    private List<AvaliacaoResponseDTO> avaliacoes;
+    private List<CaracteristicaCarroResponseDTO> caracteristicasCarro;
 }

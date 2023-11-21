@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "TB_CARACTERISTICACARRO")
+@Table(name = "TB_CARACTERISTICAS")
 public class CaracteristicaCarro {
 
     @Id
@@ -15,7 +15,6 @@ public class CaracteristicaCarro {
     private Long id;
 
     private String nome;
-    private String descricao;
 
     @ManyToMany(mappedBy = "caracteristicaCarro")
     private List<Carro> carro;
